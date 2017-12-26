@@ -5,7 +5,7 @@ This is a small write up for the CTF Hack the Cause, which can be found at http:
 It's a small CTF, with only seven levels at the moment, but it seems like there will be more in the future, and the current levels are fun.
 
 The challenges are beginner level, and are good for explaining certain topics, such as sqli. 
-##Hidden In Plain Sight
+## Hidden In Plain Sight
 
 This one is pretty straight forward, and is just what the title suggests. Look at the source, line #77
 ```html
@@ -13,7 +13,7 @@ This one is pretty straight forward, and is just what the title suggests. Look a
 ```
 Enter that, and done. Also, I appreciate the Ricl and Morty reference
 
-##Client Side Problems
+## Client Side Problems
 This challenge shows the problem with client side authentication. Using Firebug or another developer tool, you can see the javascript file
 l2.js, which contains the line
 ```javascript
@@ -25,7 +25,7 @@ l2.js, which contains the line
 ```
 And there you go, that's the password, enter and done.
 
-##Daily Crypto
+## Daily Crypto
 
 This challenge moves away from the hidden in plain sight type of problem, where you just have to sift through the text. When you click "hint"
 it will give you a popup which says: "  Password:
@@ -34,7 +34,7 @@ it will give you a popup which says: "  Password:
 Decoded it's "birdPerson"
 Once again, a reference to Rick and Morty.
 
-##SQL Injection 101
+## SQL Injection 101
 Just as the name suggests, this challenge is basic SQL injection. The hint given provides us with the query used:
 ```sql
 SELECT * FROM users WHERE username="$user"
@@ -49,10 +49,10 @@ So, we insert
 For the password. The first ' ends the quote opened by the query string, and allows us to change the query. OR '1'='1' ensures it will always be true, and ; ends the query, -- makes anything else a comment.
 
 
-##Input Modification
+## Input Modification
 This is about using developer tools, you just have to modify the value for "No"
 
-##Cross Site Script Kiddie
+## Cross Site Script Kiddie
 
 This challengeis some XSS. It asks you to get the page to alert("pwn3d"). The first thing I thought to do would be 
 ```javascript
@@ -64,7 +64,7 @@ But that didn't work. So I looked at the response the page gave.
 ```
 That coupled with the hint "repetition is key" led me to try adding another <script> to the front, which worked.
 
-##Multi Crypto
+## Multi Crypto
 This is the final challenge, and it seems similar to #3. The hint this time is Password: YWJGYmhjU2JlSA==
 Base64 decoding this seems to give something that isn't useful, but looking at the title we can tell there must be another step in decoding this.
 CTFs tend to include the Vigenere, and rot(n). This string, once Base64 decoded is abFbhcSbeH.
